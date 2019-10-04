@@ -14,7 +14,10 @@ app.get('/*', async function(req,res) {
   let m = [];
   for (let i = 0; i < t.length; i++) {
     let k = await web3.eth.getBalance(t[i]);  
-    m.push(k);
+    m.push({
+      address: t[i],
+      amount: k
+    });
   }
   res.json({r: m});
 });
