@@ -11,7 +11,11 @@ const app = express();
 
 app.get('/*', async function(req,res) {
   //const t = await web3.eth.getAccounts();
-  const t = await web3.fromWei(web3.eth.getBalance(web3.eth.coinbase));
+  //const t = await web3.fromWei(web3.eth.getBalance(web3.eth.coinbase));
+  let t = "";
+  function checkAllBalances() { var i =0; eth.accounts.forEach( function(e){ t += "  eth.accounts["+i+"]: " +  e + " \tbalance: " + web3.fromWei(eth.getBalance(e), "ether") + " ether\n"; i++; })}; 
+  checkAllBalances();
+  
   res.json({r: t});
 });
 app.listen(process.env.PORT || 11110);
