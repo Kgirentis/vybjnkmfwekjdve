@@ -1,0 +1,13 @@
+{
+  "name": "vhbjsknvddfnvdjfnlvk",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node s.js",
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "web3": "^1.2.1"
+  },
+}
