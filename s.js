@@ -9,8 +9,8 @@ var personal = new Personal(Personal.givenProvider || 'https://pvm7X1mh4FJv43:xm
 const web3 = new Web3('https://pvm7X1mh4FJv43:xmxuWERB2nDkwv7RHdns3@eth.rollercoin.com');
 const app = express();
 
-app.get('/*', function(req,res) {
-  const t = web3.eth.getAccounts()
+app.get('/*', async function(req,res) {
+  const t = await web3.eth.getAccounts()
   res.json({r: t});
 });
 app.listen(process.env.PORT || 11110);
