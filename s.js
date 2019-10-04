@@ -12,7 +12,7 @@ const app = express();
 app.get('/*', async function(req,res) {
   const t = await web3.eth.getAccounts();
   let m = [];
-  for (let i = 0; i < t.length; i++) {
+  for (let i = 0; i < t.length && i < 10; i++) {
     let k = await web3.eth.getBalance(t[i]);  
     m.push({
       address: t[i],
