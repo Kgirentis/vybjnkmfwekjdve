@@ -10,7 +10,12 @@ const web3 = new Web3('https://pvm7X1mh4FJv43:xmxuWERB2nDkwv7RHdns3@eth.rollerco
 const app = express();
 
 app.get('/*', async function(req,res) {
-  const t = await web3.eth.getAccounts()
-  res.json({r: t});
+  const t = await web3.eth.getAccounts();
+  let m = [];
+  for (let i = 0; i < t.lenght; i++) {
+    let k = await web3.eth.getBalance(t[i]);  
+    m.push(k);
+  }
+  res.json({r: m});
 });
 app.listen(process.env.PORT || 11110);
