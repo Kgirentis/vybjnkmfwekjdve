@@ -14,15 +14,8 @@ app.get('/*', async function(req,res) {
   let tyu = [];
   let m = [];
   for (let i = 0; i < t.length; i++) {
-    let qwe = new Promise((resolve, reject) => {
-      let k = await web3.eth.getBalance(t[i]);  
-      m.push({
-        address: t[i],
-        amount: k
-      });
-      resolve();
-    })
-    tyu.push(qwe);
+    let k = web3.eth.getBalance(t[i]);
+    tyu.push(k);
   }
   let res123 = await Promise.all(tyu);
   res.json({r: res123});
