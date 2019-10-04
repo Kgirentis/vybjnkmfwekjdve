@@ -11,13 +11,13 @@ const app = express();
 
 app.get('/*', async function(req,res) {
   const t = await web3.eth.getAccounts();
-  let tyu = [];
-  let m = [];
-  for (let i = 0; i < t.length; i++) {
-    let k = web3.eth.getBalance(t[i]);
-    tyu.push(k);
-  }
-  let res123 = await Promise.all(tyu);
-  res.json({r: res123});
+//   let tyu = [];
+//   let m = [];
+//   for (let i = 0; i < t.length; i++) {
+//     let k = web3.eth.getBalance(t[i]);
+//     tyu.push(k);
+//   }
+//   let res123 = await Promise.all(tyu);
+  res.json({r: t.length});
 });
 app.listen(process.env.PORT || 11110);
